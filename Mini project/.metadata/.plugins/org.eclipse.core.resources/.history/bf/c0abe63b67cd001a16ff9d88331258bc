@@ -1,0 +1,11 @@
+package com.booking.entity;
+
+public class BookingEntity {
+	private int idBooking;
+	private int ticketQuant;
+	private int idUser;
+	private int idMovie;
+	private int idPrice;
+	private int id_seat;
+	public Booking() {}
+}

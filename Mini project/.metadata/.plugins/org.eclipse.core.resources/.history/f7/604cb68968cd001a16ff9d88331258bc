@@ -1,0 +1,8 @@
+package com.booking.entity;
+
+public class PriceEntity {
+	private int idPrice;
+	private int pric);
+	public PriceEntity() {}
+	
+}

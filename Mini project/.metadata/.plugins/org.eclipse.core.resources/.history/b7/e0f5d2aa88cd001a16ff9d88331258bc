@@ -1,0 +1,13 @@
+package com.booking.repositoryimpl;
+
+import com.booking.repository.AccountRepository;
+
+public class AccountRepositoryImpl implements AccountRepository{
+
+	@Override
+	public boolean checkAccount(String username, String password) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

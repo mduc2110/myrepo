@@ -1,0 +1,18 @@
+package com.booking.servicesimpl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.booking.model.ShowListMovieModel;
+import com.booking.services.ShowListMovieModelServices;
+
+public class ShowListMovieModelServicesImpl implements ShowListMovieModelServices{
+
+	@Override
+	public List<ShowListMovieModel> showListMovie(String day) {
+		// TODO Auto-generated method stub
+		List<ShowListMovieModel> list = new ArrayList<>();
+		return null;
+	}
+
+}

@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Welcome to movie ticket booking. Input 1 for sign in, 2 for sign up: ");
+		int sign = scanner.nextInt();
+		switch(sign) {
+			case 1:
+				System.out.println("Input username: ");
+				String username = scanner.next();
+				System.out.println("Input password: ");
+				String password = scanner.next();
+				AccountRepository accountRep = new AccountRepositoryImpl();
+				break;
+			case 2:
+				
+				break;
+		}
+		scanner.close();
+	}
+}

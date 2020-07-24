@@ -1,0 +1,9 @@
+package com.booking.entity;
+
+public class SeatEntity {
+	private int idSeat;
+	private int idTheater;
+	private String seatRow;
+	private int seatCol;
+	private int state;
+}

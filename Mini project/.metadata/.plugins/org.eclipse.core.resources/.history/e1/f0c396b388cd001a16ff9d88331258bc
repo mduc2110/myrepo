@@ -1,0 +1,21 @@
+package com.booking.repositoryimpl;
+
+import com.booking.repository.AccountRepository;
+
+public class AccountRepositoryImpl implements AccountRepository{
+	private Connection connection = null;
+	private PreparedStatement stmt = null;
+	private ResultSet rs = null;
+	
+	private Connection getConnection() throws SQLException{
+		Connection conn = null;
+		conn = ConnectionFactory.getInstance().getConnection();
+		return conn;
+	}
+	@Override
+	public boolean checkAccount(String username, String password) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

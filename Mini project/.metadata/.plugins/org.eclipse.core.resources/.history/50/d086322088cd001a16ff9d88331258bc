@@ -1,0 +1,8 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Welcome to movie ticket booking. Input 1 for sign in, 2 for sign up: ");
+	}
+}

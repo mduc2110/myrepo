@@ -1,0 +1,5 @@
+package com.booking.configuration;
+
+public class ConnectionFactory {
+
+}
