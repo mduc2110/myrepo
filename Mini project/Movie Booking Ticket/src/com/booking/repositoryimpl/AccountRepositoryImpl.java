@@ -13,7 +13,10 @@ import com.booking.repository.AccountRepository;
 
 public class AccountRepositoryImpl implements AccountRepository{
 	private Connection connection = null;
+	
 	private PreparedStatement stmt = null;
+	
+	
 	private ResultSet rs = null;
 	
 	private Connection getConnection() throws SQLException{

@@ -1,16 +1,17 @@
 import java.util.*;
 public class movie{
 	public static void main(String[] args){
-		/*System.out.println("username: ");
+		System.out.println("username: ");
 		System.out.println("password: ");
 		System.out.println("----------");
 		System.out.println("welcome to booking movie ticket!");
 		System.out.println("Please choose the day you want: 27/7/2020");
 		System.out.println("----------------------------------------------------");
 		System.out.println("*27/7/2020:");
-		System.out.println("1. from 13:00:00 to 16:00:00 Avengers4 theater: 4");
-		System.out.println("2. from 13:00:00 to 16:00:00 Mission Impossible theater: 3");
-		System.out.println("3. from 13:00:00 to 16:00:00 Infinity theater: 2");
+		System.out.println("1.Avengers4 || from 13:00:00 to 16:00:00 || theater: 4 || seat 3/100");
+		System.out.println("1.Avengers4 || from 13:00:00 to 16:00:00 || theater: 4 || seat 3/100");
+		System.out.println("1.Avengers4 || from 13:00:00 to 16:00:00 || theater: 4 || seat 3/100");
+		System.out.println("1.Avengers4 || from 13:00:00 to 16:00:00 || theater: 4 || seat 3/100");
 		System.out.println("There are films in 27/7/2020! Choose a compatible film number: 1");
 		System.out.println("Choose a seat: E5");
 		System.out.println("*-1-2-3-4-5-6-7-8-9");
@@ -22,11 +23,9 @@ public class movie{
 		System.out.println("F-o-o-o-o-o-o-o-o-o");
 		
 		
-		for(int i = 65;i < 70;i++){
-			System.out.printf("%c ", i);
-		}*/
 		
-		Scanner scanner = new Scanner(System.in);
+		
+		/*Scanner scanner = new Scanner(System.in);
 		System.out.println("Input your seat: ");
 		String seat = scanner.next();
 		String ee[] = seat.split("");
@@ -62,7 +61,7 @@ public class movie{
 				if(j == lenghtRow-1)
 					System.out.println();
 			}
-		}
+		}*/
 	}
 	public static int getASCII(String c){
 		if(c.equalsIgnoreCase("A")){
