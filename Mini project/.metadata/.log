@@ -2451,3 +2451,125 @@ Caused by: java.io.FileNotFoundException: D:\App\Git\mingw64\share\git\git-for-w
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-07-26 16:55:37.431
 !MESSAGE executing callback sts4.classpath.sDZshDSr SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-07-26 17:09:53.190
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.sDZshDSr
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-07-26 17:09:53.206
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.sDZshDSr
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-07-26 17:09:53.222
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-07-26 17:09:53.237
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.sDZshDSr => OK
+!SESSION 2020-07-26 23:44:45.192 -----------------------------------------------
+eclipse.buildId=4.13.0.I20190916-1045
+java.version=1.8.0_221
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jface 2 0 2020-07-26 23:45:08.739
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2020-07-26 23:45:08.739
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@64f49b3,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@23e3a27f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2020-07-26 23:45:11.657
+!MESSAGE Unable to retrieve the bundle from the URI: bundleclass://com.genuitec.eclipse.meexplorer/com.genuitec.eclipse.meexplorer.breadcrumb.e4.BreadCrumbContainer
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-07-26 23:45:32.827
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-07-26 23:45:32.837
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@faff9a0[org.springframework.tooling.boot.ls:1.12.0.201910232051(id=1003)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-07-26 23:45:33.186
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-07-26 23:45:33.946
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-07-26 23:45:34.130
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\user'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-07-26 23:46:04.494
+!MESSAGE Boot LS startup time from start to initialized: 31143ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-07-26 23:46:04.903
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.TcIDEJHaisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-07-26 23:46:04.911
+!MESSAGE subscribing to classpath changes: sts4.classpath.TcIDEJHa isBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-07-26 23:46:04.919
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-07-26 23:46:04.927
+!MESSAGE subsribers = {sts4.classpath.TcIDEJHa=Send Classpath Notifications(820)}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-07-26 23:46:04.933
+!MESSAGE Sending initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-07-26 23:46:04.939
+!MESSAGE project HappyProject ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-07-26 23:46:04.946
+!MESSAGE project Movie Booking Ticket ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-07-26 23:46:04.952
+!MESSAGE Preparing classpath changed notification HappyProject
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-07-26 23:46:04.960
+!MESSAGE Sending initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-07-26 23:46:04.966
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-07-26 23:46:04.972
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.TcIDEJHa => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-07-26 23:46:04.986
+!MESSAGE classpath=20 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-07-26 23:46:04.998
+!MESSAGE buffering callback sts4.classpath.TcIDEJHa HappyProject false 19
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-07-26 23:46:05.004
+!MESSAGE Preparing classpath changed notification Movie Booking Ticket
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-07-26 23:46:05.015
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-07-26 23:46:05.023
+!MESSAGE classpath=21 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-07-26 23:46:05.031
+!MESSAGE buffering callback sts4.classpath.TcIDEJHa Movie Booking Ticket false 20
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-07-26 23:46:05.040
+!MESSAGE executing callback sts4.classpath.TcIDEJHa 2 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-07-26 23:46:05.170
+!MESSAGE executing callback sts4.classpath.TcIDEJHa SUCCESS [done]
