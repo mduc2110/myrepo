@@ -39,13 +39,14 @@ public class ShowListMovieModelServicesImpl implements ShowListMovieModelService
 				listItem.setMovieName(rs.getString("movie_name"));
 				listItem.setTimeStart(rs.getString("time_start"));
 				listItem.setTimeEnd(rs.getString("time_end"));
-				listItem.setNameTheater(rs.getString("name_theater"));
-				listItem.setSeatQuant(rs.getInt("seat_quant"));
-				listItem.setHasPeople(rs.getInt("has_people"));
+				listItem.setNameTheater(rs.getString("theater_name"));
+				listItem.setSeatQuant(rs.getInt("quant"));
+				listItem.setHasPeople(rs.getInt("empty"));
 				list.add(listItem);
-				for(int i = 0;i < list.size();i++) {
-					System.out.println(i+"ten phim: "+list.get(i).getMovieName());
-				}
+				
+			}
+			for(int i = 0;i < list.size();i++) {
+				System.out.println(i+"ten phim: "+list.get(i).getMovieName());
 			}
 			
 		} catch (SQLException e) {
