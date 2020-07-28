@@ -1,7 +1,0 @@
-package com.booking.services;
-
-import java.util.List;
-
-public interface ShowListModelServices {
-	List<ShowListMovieModel>
-}

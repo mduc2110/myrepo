@@ -1,9 +1,0 @@
-package com.booking.entity;
-
-import java.sql.Time;
-
-public class MovieEntity {
-	private int idMovie;
-	private Time timeStart;
-	private Time timeEnd;
-}

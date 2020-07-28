@@ -1,8 +1,0 @@
-package com.booking.model;
-
-public class ShowListMovieModel {
-	private String movieDay;
-	private String movieName;
-	private String time_start;
-	private String time_end;
-}

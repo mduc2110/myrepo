@@ -1,7 +1,0 @@
-package com.booking.entity;
-
-public class TheaterEntity {
-	private int idTheater;
-	private int seatQuant;
-	
-}
