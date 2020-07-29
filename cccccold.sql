@@ -51,9 +51,9 @@ CREATE TABLE IF NOT EXISTS `booking` (
   CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `acc` (`id_user`),
   CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`id_movie`) REFERENCES `movie` (`id_movie`),
   CONSTRAINT `booking_ibfk_3` FOREIGN KEY (`id_price`) REFERENCES `price` (`id_price`)
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=latin1;
 
--- Dumping data for table moviedb.booking: ~33 rows (approximately)
+-- Dumping data for table moviedb.booking: ~22 rows (approximately)
 /*!40000 ALTER TABLE `booking` DISABLE KEYS */;
 INSERT INTO `booking` (`id_booking`, `id_user`, `id_movie`, `id_price`, `seat_position`) VALUES
 	(1, 2, 1, 1, 'B4'),
@@ -103,9 +103,9 @@ CREATE TABLE IF NOT EXISTS `movie` (
   KEY `id_movtime` (`id_movtime`),
   CONSTRAINT `movie_ibfk_1` FOREIGN KEY (`id_theater`) REFERENCES `theater` (`id_theater`),
   CONSTRAINT `movie_ibfk_2` FOREIGN KEY (`id_movtime`) REFERENCES `movtime` (`id_movtime`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
--- Dumping data for table moviedb.movie: ~8 rows (approximately)
+-- Dumping data for table moviedb.movie: ~6 rows (approximately)
 /*!40000 ALTER TABLE `movie` DISABLE KEYS */;
 INSERT INTO `movie` (`id_movie`, `movie_day`, `id_theater`, `movie_name`, `id_movtime`) VALUES
 	(1, '2020-07-30', 1, 'Avengers4: End Game', 1),
@@ -113,9 +113,7 @@ INSERT INTO `movie` (`id_movie`, `movie_day`, `id_theater`, `movie_name`, `id_mo
 	(3, '2020-07-30', 1, 'Thor4: Ragnarok', 3),
 	(4, '2020-07-30', 1, 'Ant Man and the Wasp', 4),
 	(5, '2020-07-30', 2, 'Mission Impossible 4', 1),
-	(6, '2020-07-30', 2, 'Fast and Furious 9', 3),
-	(7, '2020-07-31', 1, 'cc', 1),
-	(12, '2020-08-01', 1, 'Thor 2:The Dark World', 1);
+	(6, '2020-07-30', 2, 'Fast and Furious 9', 3);
 /*!40000 ALTER TABLE `movie` ENABLE KEYS */;
 
 -- Dumping structure for table moviedb.movtime
@@ -152,36 +150,6 @@ INSERT INTO `price` (`id_price`, `price`, `description`) VALUES
 	(3, 125000, 'Specials day');
 /*!40000 ALTER TABLE `price` ENABLE KEYS */;
 
--- Dumping structure for procedure moviedb.proc_get_booking_by_id
-DELIMITER //
-CREATE PROCEDURE `proc_get_booking_by_id`(IN idBooking INT(11))
-BEGIN
-	SELECT name_of_user, movie_name, seat_position, price.price, movie.movie_day, theater.theater_name, time_start, time_end
-	FROM booking, acc, movie, movtime, price, theater
-	WHERE booking.id_booking = idBooking
-	AND acc.id_user = booking.id_user 
-	AND booking.id_movie = movie.id_movie 
-	and movie.id_movtime = movtime.id_movtime 
-	AND booking.id_price = price.id_price
-	AND theater.id_theater = movie.id_theater;
-END//
-DELIMITER ;
-
--- Dumping structure for procedure moviedb.proc_get_list_booking_by_id
-DELIMITER //
-CREATE PROCEDURE `proc_get_list_booking_by_id`(IN idUser INT(11))
-BEGIN
-	SELECT name_of_user, movie_name, seat_position, price.price, movie.movie_day, theater.theater_name, time_start, time_end
-	FROM booking, acc, movie, movtime, price, theater
-	WHERE acc.id_user = idUser
-	AND acc.id_user = booking.id_user 
-	AND booking.id_movie = movie.id_movie 
-	and movie.id_movtime = movtime.id_movtime 
-	AND booking.id_price = price.id_price
-	AND theater.id_theater = movie.id_theater;
-END//
-DELIMITER ;
-
 -- Dumping structure for procedure moviedb.proc_get_position_by_id_movie
 DELIMITER //
 CREATE PROCEDURE `proc_get_position_by_id_movie`(IN idMovie INT(11))
@@ -202,20 +170,6 @@ BEGIN
 	SELECT row_quant, col_quant, empty
 	FROM seat_state, theater
 	WHERE seat_state.id_theater = theater.id_theater AND seat_state.id_movie = idMovie;
-END//
-DELIMITER ;
-
--- Dumping structure for procedure moviedb.proc_get_theater_by_date
-DELIMITER //
-CREATE PROCEDURE `proc_get_theater_by_date`(IN d DATE)
-BEGIN
-	
-	SELECT  theater_name, movtime.name_movtime, theater.id_theater, movtime.id_movtime, time_start, time_end
-	FROM movie, movtime, theater
-	WHERE movie.id_theater = theater.id_theater 
-	AND movie.id_movtime = movtime.id_movtime
-	AND movie.movie_day = d;
-
 END//
 DELIMITER ;
 
@@ -246,27 +200,28 @@ DELIMITER ;
 -- Dumping structure for table moviedb.seat_state
 CREATE TABLE IF NOT EXISTS `seat_state` (
   `id_seatstate` int(11) NOT NULL AUTO_INCREMENT,
+  `id_movtime` int(11) DEFAULT NULL,
   `id_theater` int(11) DEFAULT NULL,
   `empty` int(11) DEFAULT NULL,
   `id_movie` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_seatstate`),
   KEY `id_theater` (`id_theater`),
+  KEY `id_movtime` (`id_movtime`),
   KEY `FK_seat_state_movie` (`id_movie`),
   CONSTRAINT `FK_seat_state_movie` FOREIGN KEY (`id_movie`) REFERENCES `movie` (`id_movie`),
-  CONSTRAINT `seat_state_ibfk_1` FOREIGN KEY (`id_theater`) REFERENCES `theater` (`id_theater`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+  CONSTRAINT `seat_state_ibfk_1` FOREIGN KEY (`id_theater`) REFERENCES `theater` (`id_theater`),
+  CONSTRAINT `seat_state_ibfk_2` FOREIGN KEY (`id_movtime`) REFERENCES `movtime` (`id_movtime`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
--- Dumping data for table moviedb.seat_state: ~7 rows (approximately)
+-- Dumping data for table moviedb.seat_state: ~6 rows (approximately)
 /*!40000 ALTER TABLE `seat_state` DISABLE KEYS */;
-INSERT INTO `seat_state` (`id_seatstate`, `id_theater`, `empty`, `id_movie`) VALUES
-	(1, 1, 93, 1),
-	(2, 1, 100, 2),
-	(3, 1, 92, 3),
-	(4, 1, 93, 4),
-	(5, 2, 67, 5),
-	(6, 2, 62, 6),
-	(9, 1, 100, 7),
-	(11, 1, 100, 12);
+INSERT INTO `seat_state` (`id_seatstate`, `id_movtime`, `id_theater`, `empty`, `id_movie`) VALUES
+	(1, 1, 1, 93, 1),
+	(2, 2, 1, 100, 2),
+	(3, 3, 1, 92, 3),
+	(4, 4, 1, 93, 4),
+	(5, 1, 2, 67, 5),
+	(6, 3, 2, 62, 6);
 /*!40000 ALTER TABLE `seat_state` ENABLE KEYS */;
 
 -- Dumping structure for table moviedb.theater
@@ -275,16 +230,15 @@ CREATE TABLE IF NOT EXISTS `theater` (
   `theater_name` varchar(5) DEFAULT NULL,
   `row_quant` int(11) DEFAULT NULL,
   `col_quant` int(11) DEFAULT NULL,
-  `state` int(11) DEFAULT NULL,
+  `state` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id_theater`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
--- Dumping data for table moviedb.theater: ~3 rows (approximately)
+-- Dumping data for table moviedb.theater: ~2 rows (approximately)
 /*!40000 ALTER TABLE `theater` DISABLE KEYS */;
 INSERT INTO `theater` (`id_theater`, `theater_name`, `row_quant`, `col_quant`, `state`) VALUES
-	(1, 'A', 10, 10, NULL),
-	(2, 'B', 7, 10, NULL),
-	(3, 'C', 8, 10, NULL);
+	(1, 'A', 10, 10, 0),
+	(2, 'B', 7, 10, 0);
 /*!40000 ALTER TABLE `theater` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

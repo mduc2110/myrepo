@@ -42,8 +42,8 @@ public class MovieTimeRepositoryImpl implements MovieTimeRepository{
 				list.add(mt);
 			}
 			for(int i = 1; i <= list.size();i++) {
-				System.out.println(i+". C1: "+list.get(i-1).getNameMovTime()+
-						" From: "+list.get(i-1).getTimeStart()+
+				System.out.println(i+". "+list.get(i-1).getNameMovTime()+
+						": From: "+list.get(i-1).getTimeStart()+
 						" To: "+list.get(i-1).getTimeEnd());
 			}
 		} catch (SQLException e) {

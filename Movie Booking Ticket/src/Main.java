@@ -9,20 +9,25 @@ import com.booking.entity.BookingEntity;
 import com.booking.entity.MovieTimeEntity;
 import com.booking.entity.TheaterEntity;
 import com.booking.model.ShowListMovieModel;
+import com.booking.model.TheaterTimeSlotModel;
 import com.booking.repository.AccountRepository;
 import com.booking.repository.BookingRepository;
+import com.booking.repository.MovieRepository;
 import com.booking.repository.MovieTimeRepository;
 import com.booking.repository.PriceRepository;
 import com.booking.repository.TheaterRepository;
 import com.booking.repositoryimpl.AccountRepositoryImpl;
 import com.booking.repositoryimpl.BookingRepositoryImpl;
+import com.booking.repositoryimpl.MovieRepositoryImpl;
 import com.booking.repositoryimpl.MovieTimeRepositoryImpl;
 import com.booking.repositoryimpl.PriceRepositoryImpl;
 import com.booking.repositoryimpl.TheaterRepositoryImpl;
 import com.booking.services.BookingDetailServices;
 import com.booking.services.ShowListMovieServices;
+import com.booking.services.TheaterTimeSlotServices;
 import com.booking.servicesimpl.BookingDetailServicesImpl;
 import com.booking.servicesimpl.ShowListMovieServicesImpl;
+import com.booking.servicesimpl.TheaterTimeSlotServicesImpl;
 
 public class Main {
 	static int idUser;
@@ -174,24 +179,31 @@ public class Main {
 						String movieName;
 						String movieDay;
 						int idTheater;
-						int idMovieTime;
+						int idTimeSlot;
 						TheaterRepository theaterRepository = new TheaterRepositoryImpl();
 						MovieTimeRepository movieTimeRepository = new MovieTimeRepositoryImpl();
-						List<TheaterEntity> listTheater = new ArrayList<>();
+						TheaterTimeSlotServices theaterTimeSlotServices = new TheaterTimeSlotServicesImpl();
+						MovieRepository movieRepository = new MovieRepositoryImpl();
 						List<MovieTimeEntity> listMovieTime = new ArrayList<>();
+						List<TheaterTimeSlotModel> listTheaterTimeSlot = new ArrayList<>();
+						List<Integer> listTheaterName = new ArrayList<>();
 						
 						System.out.print("Input name of movie: ");
 						scanner.skip("(\r\n|[\n\r\u2028\u2029\u0085])?");
 						movieName = scanner.nextLine();
+						
 						System.out.print("Input day (YYYY/MM/DD): ");
 						movieDay = scanner.next();
-						listTheater = theaterRepository.findAll();
+						listTheaterTimeSlot = theaterTimeSlotServices.getEmptyTimeSlot(movieDay);
+						listTheaterName = theaterTimeSlotServices.getAvailableTheater();
+						
 						System.out.print("Input compatible theater number: ");
 						idTheater = scanner.nextInt();
-						listMovieTime = movieTimeRepository.findAll();
+						//listMovieTime = movieTimeRepository.findAll();
+						listTheaterTimeSlot = theaterTimeSlotServices.getAvailableTimeSlot(listTheaterName.get(idTheater-1));
 						System.out.print("Input compatible time number: ");
-						idMovieTime = scanner.nextInt();
-						
+						idTimeSlot = scanner.nextInt();
+						movieRepository.addMovie(movieDay, idTheater, movieName, idTimeSlot);
 						break;
 					case 2:
 						break;
