@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Dinner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="pc-layout">
+                <h2><a href="#"><img src="img/logo.png" alt=""></a></h2>
+                <nav>
+                    <ul>
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">MENU</a></li>
+                        <li><a href="#">ABOUT</a></li>
+                        <li><a href="#">PAGES</a></li>
+                        <li><a href="#">BLOG</a></li>
+                        <li><a href="#">CONTACT</a></li>
+                    </ul>
+                </nav>
+                
+            </div>
+            
+        </header>
+        <div class="slide-show-area" id="slide">
+            
+            <img class="slide-img" src="img/slider-01.jpg" alt="">
+            <img class="slide-img" src="img/slider-02.jpg" alt="">
+            <img class="slide-img" src="img/slider-03.jpg" alt="">
+            <button name="btn-next" href="#" class='js-btn fas fa-chevron-left' onclick="btnNext()"></button>
+            <button href="#" class='fas fa-chevron-right btn-pre' onclick="btnPre()"></button>
+            
+        </div>
+        <section id="section-1">
+            <div class="pc-layout">
+                <div class="section-1-left">
+                    <h1>Welcome To Live Dinner Restaurant</h1>
+                    <p>Little Story</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque auctor suscipit feugiat. Ut at pellentesque ante, sed convallis arcu. Nullam facilisis, eros in eleifend luctus, odio ante sodales augue, eget lacinia lectus erat et sem.</p>
+                    <p>Sed semper orci sit amet porta placerat. Etiam quis finibus eros. Sed aliquam metus lorem, a pellentesque tellus pretium a. Nulla placerat elit in justo vestibulum, et maximus sem pulvinar.</p>
+                    <button>RESERVATION</button>
+                </div>
+                <div class="section-1-right">
+                    <img src="img/about-img.jpg" alt="">
+                </div>
+            </div>
+        </section>
+        <section id="section-2">
+            <div class="pc-layout">
+                <p>" If you're not the one cooking, stay out of the way and compliment the chef. "</p>
+                <p>Michael Strahan</p>
+            </div>
+        </section>
+        <section id="section-3">
+            <div class="pc-layout">
+                <h2>Special Menu</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+                <div class="section-3-left">
+                    <a  onclick="showAll()">All</a>
+                    <a onclick="showDrinks()">Drinks</a>
+                    <a  onclick="showLunch()">Lunch</a>
+                    <a  onclick="showDinner()">Dinner</a>
+                </div>
+                <div class="section-3-right">
+
+                </div>
+            </div>
+        </section>
+        <section id="section-4">
+            <div class="pc-layout">
+                <h2>Gallery</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+                <div class="section-4-gallery">
+
+                </div>
+            </div>
+        </section>
+        <section id="section-5">
+            <div class="pc-layout">
+                <h2>Customer Reviews</h2>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+                <div class="section-5-carousel">
+
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="footer-top"></div>
+            <div class="footer-middle">
+                <div>
+                    <div class="pc-layout">
+                        <div class="about-us">
+                            <h3>ABOUT US</h3>
+                            <p>Integer cursus scelerisque ipsum id efficitur. Donec a dui fringilla, gravida lorem ac, semper magna. Aenean rhoncus ac lectus a interdum. Vivamus semper posuere dui.</p>
+                        </div>
+                        <div class="subscribe">
+                            <h3>SUBSCRIBE</h3>
+                            <div class="subscribe-form">
+                                <input type="email">
+                                <button>SUBSCRIBE</button>
+                            </div>
+                            <div class="list-social"></div>
+                        </div>
+                        <div class="contact-information">
+                            <h3>CONTACT INFORMATION</h3>
+                            <p>Ipsum Street, Lorem Tower, MO, Columbia, 508000</p>
+                            <p>+01 2000 800 9999</p>
+                            <p>info@admin.com</p>
+                        </div>
+                        <div class="opening-hour">
+                            <h3>OPENING HOUR</h3>
+                            <p>Monday: Closed</p>
+                            <p>Tue-Wed : 9:Am - 10PM</p>
+                            <p>Tue-Wed : 9:Am - 10PM</p>
+                            <p>Tue-Wed : 9:Am - 10PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>All Rights Reserved. © 2018 Live Dinner Restaurant Design By : html design</p>
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="js/script.js"></script>
+</html>
