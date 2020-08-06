@@ -248,6 +248,7 @@ header nav ul li a{
 #section-4{}
 #section-4 .pc-layout{
     padding: 70px 0;
+    overflow: initial;
 }
 #section-4 h2{
     font-size: 28px;

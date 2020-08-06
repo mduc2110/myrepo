@@ -142,19 +142,6 @@ window.onload = function(){
    
     console.log(hoverImg);
     showGallery();
-    hoverGallery = document.querySelectorAll('.gallery-img');
-    hoverGallery.onmouseover = () =>{
-        alert('hh');
-    }
-}
-mouseOver = () =>{ 
-    detailImg = document.getElementsByClassName("img-detail");
-    //detailImg.style.top = 0;
-    this.style.transform = 'scale(1.1)';
-}
-mouseOverGallery = () => {
-    alert('hh')
-
 }
 //load gallery
 galleryWrap = document.querySelector('.section-4-gallery');
@@ -174,9 +161,17 @@ showGallery = () =>{
         let galleryChild = document.createElement('img');
         galleryChild.setAttribute('src', imgGallery[i]);
         galleryChild.setAttribute('name', "gallery-img");
-        galleryChild.setAttribute('onmouseover', "mouseOverGallery()");
-        galleryChild.setAttribute('style', "width: 100%;height: 100%;display:block;box-shadow: 0 2px 3px rgba(0,0,0,0.2)");
+        galleryChild.setAttribute('onmouseover', "mouseOverGallery(this)");
+        galleryChild.setAttribute('onmouseout', "mouseOutGallery(this)");
+        galleryChild.setAttribute('style', "width: 100%;height: 100%;display:block;transition: .3s all;");
         galleryParent.appendChild(galleryChild);
-        
     }
+}
+mouseOverGallery = (obj) =>{
+    obj.style.transform = 'scale(1.07)';
+    obj.style.boxShadow = '0 2px 3px rgba(0,0,0,0.2)';
+}
+mouseOutGallery = (obj) =>{
+    obj.style.transform = 'scale(1)';
+    obj.style.boxShadow = 'none';
 }
