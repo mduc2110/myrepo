@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="surround">
+
+    
+        <header>
+            <a href="#"><img src="assets/img/GardentitleLLC_PMGWeb.png" alt=""></a>
+        </header>
+        <div class="container">
+            <aside>
+                <h1>Danh mục</h1>
+                <ul class="side-bar">
+                    <li class="active" onclick="openGarden()"><a href="#">Garden</a></li>
+                    <li onclick="openDoor()"><a href="#">Door</a></li>
+                    <li onclick="openSetting()"><a href="#">Setting</a></li>
+                </ul>
+            </aside>
+            <section>
+                <div class="item-container garden">
+                    <div class="item">
+                        <div class="img-box">
+                            <img src="assets/img/light_bulb.png" alt="">
+                        </div>
+                        <div class="btn-group">
+                            <input type="range" min="0" max="100" value="1" class="slider" id="den">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="img-box">
+                            <img id = "bom_nuoc" src="assets/img/may_bom.png" alt="">
+                        </div>
+                        <div class="btn-group">
+                            <button id="btn_on" class="btn  btn-off">ON</button>
+                            <button id="btn_off" class="btn ">OFF</button>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="img-box">
+                            <img  src="assets/img/muc_nuoc.jpg" alt="">
+                        </div>
+                        <div class="btn-group">
+                            <input type="range" min="0" max="100" value="10" class="slider" id="mucnuoc">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div id="slider1" class="round-slider">
+                        </div>
+                        <h1>Nhiệt độ</h1>
+                    </div>
+                    <div class="item">
+                        <div id="slider2" class="round-slider">
+                        </div>
+                        <h1>Độ ẩm</h1>
+                    </div>
+                    <div class="item">
+                        <div id="slider3" class="round-slider">
+                        </div>
+                        <h1>Ánh sáng</h1>
+                    </div>
+                </div>
+                <div class="item-container door">
+                    <div class="item">
+                        <div class="img-box">
+                            <img id="doorLight" src="assets/img/light_bulb.png" >
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="img-box">
+                            <img id="door_state" src="assets/img/door_open.png" alt="">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="img-box">
+                            <img id="bulb_change" src="assets/img/light_bulb.png" alt="">
+                        </div>
+                        <button id="off" class="btn  btn-off">OFF</button>
+                    </div>
+                </div>
+
+                <div class="item-container setting">
+                    <div class="setting-group">
+                        <h1>Mã thẻ mới:</h1>
+                        <input type="text" placeholder="Nhập mã thẻ vào đây" id="passcode">
+                        <button onclick="sendCode()">Submit</button>
+                    </div>
+                    
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+                                    
+<link href="https://cdn.jsdelivr.net/npm/round-slider@1.6.1/dist/roundslider.min.css" rel="stylesheet" />
+                                    
+<script src="https://cdn.jsdelivr.net/npm/round-slider@1.6.1/dist/roundslider.min.js"></script> 
+
+
+<script>
+    var buttonSideBars = document.querySelectorAll(".side-bar li");
+    // buttonSideBars.forEach(btn =>{
+    //     console.log(btn);
+    //     // btn.addEventListener('click',() =>{
+    //     //     var current = document.getElementsByClassName(".side-bar li.active");
+    //     //     btn.classList.add("active");
+    //     //     current.className = current.className.replace(" active", "");
+    //     // })
+        
+    // })
+    for (var i = 0; i < buttonSideBars.length; i++) {
+        buttonSideBars[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace("active", "");
+        this.className += "active";
+        });
+    }
+    var containerGarden = document.querySelector(".item-container.garden");
+    var containerDoor = document.querySelector(".item-container.door");
+    var containerSetting = document.querySelector(".item-container.setting");
+    // var container = document.querySelector("item-container garden");
+    function openGarden(){
+        containerGarden.classList.remove("display-none");
+        
+        containerDoor.classList.add("display-none");
+        containerSetting.classList.add("display-none");
+    }
+    function openDoor(){
+        containerDoor.classList.remove("display-none")
+
+        containerGarden.classList.add("display-none")
+        containerSetting.classList.add("display-none")
+    }
+    function openSetting(){
+        containerSetting.classList.remove("display-none")
+
+        containerGarden.classList.add("display-none")
+        containerDoor.classList.add("display-none")
+    }
+    function handleDisplay() {
+        
+    }
+    openGarden();
+</script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script> 
+<script src="firebase.js"></script>
+</html>

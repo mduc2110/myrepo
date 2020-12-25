@@ -1,0 +1,91 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --primary-color:#2cc4d3;
+    --border-color: #dbdbdb;
+    --star-gold-color: #FFCe3e;
+
+    --header-height: 140px;
+    --navbar-height: 34px;  
+}
+
+*{
+    box-sizing: inherit;
+}
+/*hack*/
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem; /*16px*/
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+/* RENSPONSIVE */
+/* grid{
+        row{
+         column{}
+    }
+} */ 
+
+.grid{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.grid__full-width{
+    width: 100%;
+}
+
+.grid__row{
+    display: flex;
+
+}
+
+.grid__column-2{
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 16.6667%;
+}
+
+.grid__column-10{
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 83.3333%;
+}
+
+.grid__column-10-3{
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 33.3333%;
+}
+
+
+/* BTN */
+.btn{
+    min-width: 124px;
+    height: 34px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    outline: none;
+    padding: 0 12px;
+    cursor: pointer;
+    color: var(--text-color);
+    background-color:#F5F5F5 ;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.6rem;
+    margin:0 0 10px 20px;
+}
+
+.btn:hover{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.btn-off{
+    margin-right:8px;
+}
